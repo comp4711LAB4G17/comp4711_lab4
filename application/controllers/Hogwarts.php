@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends Application
+class Hogwarts extends Application
 {
 
 	function __construct()
@@ -29,12 +29,16 @@ class Welcome extends Application
 
 		$this->render();
 	}
+
+        
         public function shucks() {
-                $this->data['pagebody'] = 'justone';
-                $source = $this->quotes->get(2);
-                $this->data['mug'] = $source['mug'];
-                $this->data['who'] = $source['who'];
-                $this->data['what'] = $source['what'];
-                $this->render();
-    }
+        // this is the view we need to show
+        $this->data['pagebody'] = 'justone';
+        // build the list of authors, to pass on to our view
+        $source = $this->quotes->get(2);
+        $this->data['mug'] = $source['mug'];
+        $this->data['who'] = $source['who'];
+        $this->data['what'] = $source['what'];
+        $this->render();
+        }
 }
